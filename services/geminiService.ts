@@ -3,12 +3,12 @@ import { DefenseAnalysis } from "../types";
 
 const SYSTEM_INSTRUCTION = `
 You are the AI core of the "Anti Deeksha Protection Service". 
-Deeksha is a fictional character representing a playful, overly affectionate, or slightly annoying person who puts the user in "dangerous" social situations.
+Deeksha is a fictional character representing a playful, overly affectionate, or slightly chaotic person who puts the user in tricky social situations.
 
-Your goal is to provide a HILARIOUS, SARCASSTIC, and DRAMATIC tactical analysis of the situation. 
-CONTEXT: Use "Indian/Desi" style humor. Think Bollywood melodrama, strict Indian parents logic, engineering student struggles, and over-the-top reactions. 
-Use slang like "Bhai", "Scene sorted", "Kat gaya", "Didi", etc. appropriately.
-Keep it light-hearted and funny, not mean.
+Your goal is to provide a FUNNY, WITTY, and OBSERVATIONAL tactical analysis. 
+CONTEXT: Use "Indian/Desi" style humor. Think relatable struggles like saving money, fearing strict parents, avoiding commitment, and engineering student logic.
+Avoid being too dramatic or mean. Keep it chill, sarcastic, and fun.
+Use slang like "Bhai", "Scene sorted", "Jugad", "Kat gaya" naturally.
 
 Return the response in JSON format.
 `;
@@ -34,23 +34,23 @@ export const analyzeThreat = async (userInput: string): Promise<DefenseAnalysis>
             tags: {
               type: Type.ARRAY,
               items: { type: Type.STRING },
-              description: "3-5 short, punchy keywords (e.g. 'BHABHI ZONE', 'KAT GAYA', 'GHAR JAO')",
+              description: "3-5 short, funny keywords (e.g. 'WALLET KHATRA', 'MUMMY CALLING', 'RUN')",
             },
             threat_analysis: {
               type: Type.STRING,
-              description: "A funny, dramatic breakdown of what is happening. Use Indian context.",
+              description: "A funny, relatable breakdown of what is happening. Use Indian context.",
             },
             defense_strategy: {
               type: Type.STRING,
-              description: "The primary tactical advice to survive the encounter (e.g., mention Rakhi, calling mom, pretending to be broke).",
+              description: "The primary tactical advice (e.g., mention UPI failure, stomach ache, strict dad).",
             },
             verbal_counter: {
               type: Type.STRING,
-              description: "A witty, sarcastic line the user should say back to Deeksha.",
+              description: "A witty, sarcastic line the user should say back.",
             },
             survival_probability_text: {
               type: Type.STRING,
-              description: "A paragraph predicting the outcome if they fail.",
+              description: "A one-liner predicting the outcome.",
             },
           },
           required: ["tags", "threat_analysis", "defense_strategy", "verbal_counter", "survival_probability_text"],
@@ -67,11 +67,11 @@ export const analyzeThreat = async (userInput: string): Promise<DefenseAnalysis>
     console.error("Gemini Error:", error);
     // Fallback in case of error
     return {
-      tags: ["SERVER DOWN", "ABORT", "ERROR"],
-      threat_analysis: "System overloaded by too much drama. Servers have gone to Himalayas for sannyas.",
-      defense_strategy: "Switch off phone and sleep.",
-      verbal_counter: "Main fakeer hoon.",
-      survival_probability_text: "Bhagwan bharose.",
+      tags: ["SERVER DOWN", "CHAI BREAK", "ERROR"],
+      threat_analysis: "System is on a chai break. Too much pressure.",
+      defense_strategy: "Just smile and wave.",
+      verbal_counter: "Network issue hai.",
+      survival_probability_text: "Bhagwan jaane.",
     };
   }
 };

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
           <span className="text-accent-red">ANTI DEEKSHA</span> PROTECTION
         </h1>
         <span className="font-mono text-[10px] tracking-[0.2em] text-gray-500 uppercase">
-          By Security Corps
+          By Adri Mukund
         </span>
       </div>
       
@@ -19,7 +19,7 @@ const Header: React.FC = () => {
           <div className="w-2 h-2 rounded-full bg-gray-300"></div>
         </div>
         <div className="h-6 w-[1px] bg-gray-300 mx-2"></div>
-        <span className="font-mono text-xs text-gray-400">V 2.0.5</span>
+        <span className="font-mono text-xs text-gray-400">V 2.1.0</span>
       </div>
     </div>
   );

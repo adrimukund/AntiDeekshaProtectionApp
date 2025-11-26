@@ -5,35 +5,35 @@ import { analyzeThreat } from './services/geminiService';
 import { DefenseAnalysis, AppState } from './types';
 import { ShieldAlert, BrainCircuit, MessageSquareWarning, Skull, Terminal, Shuffle } from 'lucide-react';
 
-// Predefined random funny responses
+// Predefined random funny responses - Toned down to be more "Indian funny"
 const RANDOM_PROTECTIONS: DefenseAnalysis[] = [
   {
     tags: ["RAKHI ALERT", "BHAI ZONED", "SAFE"],
-    threat_analysis: "Subject is attempting a high-level emotional maneuver known as 'The Bestie Trap'. This is usually followed by a request for a free ride or payment for golgappas.",
-    defense_strategy: "Immediately ask her about her brother. If she doesn't have one, offer to become one. Produce a Rakhi from your pocket (always carry emergency Rakhi).",
-    verbal_counter: "Didi, you remind me so much of my cousin sister.",
-    survival_probability_text: "High, if you can maintain the 'Bhaiya' energy for 15 minutes."
+    threat_analysis: "She is calling you 'Dear'. In Indian terms, this is either a request for a favor or she thinks you are her brother.",
+    defense_strategy: "Show her a picture of a Rakhi. Ask her if she knows any good shops to buy gifts for your 'cousin sisters'.",
+    verbal_counter: "Didi, pls, I am just a simple boy.",
+    survival_probability_text: "100% if you touch her feet for blessings."
   },
   {
-    tags: ["WALLET DANGER", "MONTH END", "POOR"],
-    threat_analysis: "Detected incoming request for 'Starbucks Date'. Your wallet heart rate is escalating. She is using the 'Puppy Eyes' algorithm.",
-    defense_strategy: "Fake a UPI server failure. Show her your bank balance (if it's low, even better). Start complaining about inflation.",
-    verbal_counter: "Yaar, I am on a spiritual journey. I only drink Tapri ki chai now.",
-    survival_probability_text: "Moderate. Depends on your acting skills."
+    tags: ["WALLET DANGER", "MONTH END", "KANGAL"],
+    threat_analysis: "She suggested a cafe that has 'Aesthetic' in the review. Your bank account is already crying.",
+    defense_strategy: "Suddenly remember you are fasting today. Or that your GPay server is down for maintenance.",
+    verbal_counter: "Yaar, I only eat Ghar ka khana these days. Health conscious, you know?",
+    survival_probability_text: "50-50. Don't look at the menu prices."
   },
   {
-    tags: ["CLINGY VIBES", "SPACE NEEDED", "RUN"],
-    threat_analysis: "She has texted 'Hiiiiii' with 6 'i's. This indicates a boredom level of 99% and a need for attention level of 100%.",
-    defense_strategy: "Reply after 4 to 6 business days. Send a forwarded message about 'Benefits of Silence'.",
-    verbal_counter: "Sorry, phone fell in daal. Speaker not working.",
-    survival_probability_text: "Low. She will likely double text."
+    tags: ["OVER SHARING", "HEADACHE", "BOREDOM"],
+    threat_analysis: "She has been talking about her colleague 'Simran' for 45 minutes. You have lost sensation in your ears.",
+    defense_strategy: "Pretend your mom is calling. It is the ultimate Brahmastra.",
+    verbal_counter: "Oh no, Mummy is calling! She needs help finding the remote.",
+    survival_probability_text: "High, Indian moms are the best escape route."
   },
   {
-    tags: ["MARRIAGE TRAP", "RISHTA MODE", "CODE RED"],
-    threat_analysis: "She mentioned her parents are looking for a 'Good Boy'. You are currently in the line of fire.",
-    defense_strategy: "Start acting like a chapri. Chew imaginary gutka. Talk about how you want to become a DJ in Goa.",
-    verbal_counter: "My kundali has 'Manglik' dosh. Whoever marries me turns into a frog.",
-    survival_probability_text: "Critical. One wrong move and you are engaged."
+    tags: ["COMMITMENT", "RISKY", "BHAGO"],
+    threat_analysis: "She asked 'Where do you see us in 5 years?'. This is a trap faster than a Mumbai local train.",
+    defense_strategy: "Talk about how you plan to go to the Himalayas to find inner peace. Or that you are applying for Mars mission.",
+    verbal_counter: "In 5 years? Hopefully debt free and with better hairline.",
+    survival_probability_text: "Low. Run while you can."
   }
 ];
 
@@ -62,23 +62,18 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#E5E5E5] flex items-center justify-center p-4 md:p-8 font-sans">
+    <div className="min-h-screen w-full bg-[#E5E5E5] flex items-center justify-center p-4 md:p-6 font-sans">
       
-      {/* Main Container - WIDER NOW */}
-      <div className="w-full max-w-[95%] xl:max-w-[1600px] bg-[#F0F0F0] rounded-xl shadow-2xl overflow-hidden border border-gray-300 relative flex flex-col">
+      {/* Main Container - Widened */}
+      <div className="w-full max-w-[98%] xl:max-w-[1800px] bg-[#F0F0F0] rounded-xl shadow-2xl overflow-hidden border border-gray-300 relative flex flex-col">
         
-        {/* Top bar dots decoration */}
-        <div className="absolute top-4 right-4 flex gap-1">
-             {/* Integrated into Header component, but kept here for spacing logic context */}
-        </div>
-
         <div className="p-6 md:p-10">
           <Header />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
             {/* LEFT COLUMN: Input & Controls */}
-            <div className="lg:col-span-5 flex flex-col space-y-6">
+            <div className="lg:col-span-4 xl:col-span-3 flex flex-col space-y-6">
               
               {/* Input Area */}
               <div className="relative aspect-[4/3] bg-white border border-gray-300 p-2 shadow-sm flex flex-col">
@@ -98,7 +93,7 @@ export default function App() {
                       <div className="absolute inset-0 bg-white/80 flex items-center justify-center z-10 backdrop-blur-sm">
                         <div className="flex flex-col items-center">
                           <div className="animate-spin w-8 h-8 border-2 border-accent-red border-t-transparent rounded-full mb-2"></div>
-                          <span className="font-mono text-xs text-accent-red animate-pulse">COMPUTING THREAT VECTORS...</span>
+                          <span className="font-mono text-xs text-accent-red animate-pulse">CALCULATING JUGAD...</span>
                         </div>
                       </div>
                     )}
@@ -137,14 +132,14 @@ export default function App() {
               <div className="bg-red-50 border border-red-200 p-4 rounded-sm flex items-start gap-3">
                  <ShieldAlert className="text-accent-red shrink-0" size={20}/>
                  <p className="font-mono text-[10px] text-red-800 leading-tight">
-                    WARNING: SYSTEM OPERATING ON EMERGENCY PROTOCOLS. HUMOR LEVELS MAY EXCEED SOCIAL SAFETY STANDARDS.
+                    WARNING: SYSTEM OPERATING ON EMERGENCY PROTOCOLS. PLEASE KEEP DISTANCE FROM EMOTIONAL DAMAGE.
                  </p>
               </div>
 
             </div>
 
-            {/* RIGHT COLUMN: Results */}
-            <div className="lg:col-span-7 flex flex-col space-y-6">
+            {/* RIGHT COLUMN: Results - Expanded Width */}
+            <div className="lg:col-span-8 xl:col-span-9 flex flex-col space-y-6">
               
               {/* Tags Row */}
               <div className="flex flex-wrap gap-2 min-h-[40px]">
@@ -199,7 +194,7 @@ export default function App() {
                   <div className="col-span-1 md:col-span-2 h-64 flex flex-col items-center justify-center text-gray-400 space-y-4 border-2 border-dashed border-gray-300 bg-gray-50 rounded-lg">
                     <ShieldAlert size={48} strokeWidth={1} className="text-gray-300" />
                     <p className="font-mono text-sm text-center max-w-xs uppercase tracking-wider">
-                      Awaiting Input Data...
+                      Awaiting Threat Input...
                     </p>
                   </div>
                 )}
